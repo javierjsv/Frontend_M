@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h2>Registrar de usuarios</h2>
+  <div class="row mt-5">
+    <form class="px-5 col-md-8"  [formGroup]="usuarioForm" (ngSubmit)="guardar()"(ngSubmit)="guardar()">
+      <div class="form-group">
+        <label for="nombre" class=" control-label">Nombre</label>
+        <input type="text" name="nombre" id="nombre" formControlName="nombre" placeholder="nombre" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="apellidos" class=" control-label">apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" formControlName="apellidos" placeholder="apellido" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="cedula" class=" control-label">cedula</label>
+        <input type="text" name="cedula" id="cedula" formControlName="cedula" placeholder="cedula" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="fechaNacimiento" class=" control-label">fecha de Nacimiento</label>
+        <input type="date" name="fechaNacimiento" (change)="CalcularDate($event)" id="fechaNacimiento" formControlName="fechaNacimiento" placeholder="fechaNacimiento" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password" class=" control-label">password</label>
+        <input type="password" name="password" id="password" formControlName="password" placeholder="password" class="form-control">
+      </div>
+      <div class="form-group">
+              <button type="button" class="btn btn-primary" [disabled]="usuarioForm.invalid || !fechaValidate"  (click)="guardar()">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>
